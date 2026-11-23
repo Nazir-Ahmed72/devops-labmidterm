@@ -13,6 +13,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 
+
 def fit_reference(data: pd.DataFrame, config: dict):
     fields = config['features']
     needed = fields + ['label']
