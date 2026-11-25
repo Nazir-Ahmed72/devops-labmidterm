@@ -8,6 +8,7 @@ from pydantic import BaseModel
 
 app = FastAPI(title='CSC418 Auto-Retraining Service')
 
+
 class PredictionRequest(BaseModel):
     records: list[dict]
 
