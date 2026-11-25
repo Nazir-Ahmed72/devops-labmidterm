@@ -121,15 +121,13 @@ Commit: ${env.GIT_COMMIT}
 Committed by: ${env.COMMITTER_NAME} <${committer}>
 Message: ${env.COMMIT_MSG}
 DockerHub image: ${env.HUB_IMAGE}
-Metrics: http://51.20.116.134:8000/metrics
+Metrics: http://13.239.141.228:8000/metrics
 Build URL: ${env.BUILD_URL}
 """
     // The committer always gets the report. The instructor is added only when
     // the commit was NOT made by the student (e.g. the grader pushing new data).
     def targets = []
-    if (committer != env.STUDENT_EMAIL) {
-        targets.add(env.INSTRUCTOR)
-    }
+    targets.add(env.INSTRUCTOR)
     if (!targets.contains(committer)) {
         targets.add(committer)
     }

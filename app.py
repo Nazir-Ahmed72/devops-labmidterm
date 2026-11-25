@@ -12,7 +12,6 @@ class PredictionRequest(BaseModel):
     records: list[dict]
 
 
-
 def artifacts():
     try:
         metrics = json.loads(Path('artifacts/metrics.json').read_text())
